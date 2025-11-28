@@ -1,4 +1,3 @@
-// components/Header.jsx
 "use client";
 
 import { useState } from "react";
@@ -14,54 +13,62 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="border-b border-border-subtle bg-white/80 backdrop-blur sticky top-0 z-20">
-      <div className="page-shell py-4 flex items-center justify-between gap-4">
-        {/* Brand */}
+    <header className="header-bar">
+      <div className="page-shell py-3 header-inner">
+        {/* Logo / titel links */}
         <Link href="/" className="nav-brand">
-          Oudervereniging
+          Oudervereniging De Spil
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6">
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="nav-link">
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        {/* Alles rechts uitlijnen */}
+        <div className="ml-auto flex items-center gap-4">
+          {/* Desktop navigatie */}
+          <nav className="header-nav-desktop">
+            {navItems.map((item) => (
+              <Link key={item.href} href={item.href} className="nav-link">
+                {item.label}
+              </Link>
+            ))}
+          </nav>
 
-        {/* Mobile toggle */}
-        <button
-          type="button"
-          className="md:hidden btn-ghost"
-          onClick={() => setOpen((prev) => !prev)}
-          aria-label="Navigatie openen of sluiten"
-          aria-expanded={open}
-        >
-          <span className="sr-only">Menu</span>
-          <div className="space-y-1.5">
-            <span
-              className={`block h-0.5 w-5 rounded-full bg-text-primary transition-transform ${
-                open ? "translate-y-1.5 rotate-45" : ""
-              }`}
-            />
-            <span
-              className={`block h-0.5 w-4 rounded-full bg-text-primary transition-opacity ${
-                open ? "opacity-0" : "opacity-100"
-              }`}
-            />
-            <span
-              className={`block h-0.5 w-5 rounded-full bg-text-primary transition-transform ${
-                open ? "-translate-y-1.5 -rotate-45" : ""
-              }`}
-            />
-          </div>
-        </button>
+          {/* Mobiele hamburger (alleen zichtbaar op small screens via CSS) */}
+          <button
+            type="button"
+            className="btn-ghost header-menu-button"
+            onClick={() => setOpen((prev) => !prev)}
+            aria-label="Navigatie openen of sluiten"
+            aria-expanded={open}
+          >
+            <span className="sr-only">Menu</span>
+            <div className="flex flex-col gap-1.5">
+              <span
+                className="burger-line"
+                style={
+                  open
+                    ? { transform: "translateY(6px) rotate(45deg)" }
+                    : undefined
+                }
+              />
+              <span
+                className="burger-line"
+                style={open ? { opacity: 0 } : undefined}
+              />
+              <span
+                className="burger-line"
+                style={
+                  open
+                    ? { transform: "translateY(-6px) rotate(-45deg)" }
+                    : undefined
+                }
+              />
+            </div>
+          </button>
+        </div>
       </div>
 
-      {/* Mobile nav panel */}
+      {/* Mobiele nav-panel */}
       {open && (
-        <nav className="md:hidden border-t border-border-subtle bg-white">
+        <nav className="md:hidden border-t border-[var(--border-subtle)] bg-white/95">
           <div className="page-shell py-3 flex flex-col gap-2">
             {navItems.map((item) => (
               <Link

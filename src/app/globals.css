@@ -2,13 +2,22 @@
 
 /* Basis typografie en kleuren – zonder @apply */
 :root {
-  --bg-page: #f9fafb;            /* ongeveer bg-gray-50 */
-  --text-primary: #111827;       /* text-gray-900 */
-  --text-secondary: #4b5563;     /* text-gray-700 */
-  --text-subtle: #6b7280;        /* text-gray-500 */
-  --border-subtle: #e5e7eb;      /* border-gray-200 */
+  --bg-page: #f9fafb;
+
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-subtle: #6b7280;
+
+  --border-subtle: #e5e7eb;
+
   --surface: #ffffff;
   --surface-muted: #f9fafb;
+
+  /* NIEUW: wat meer kleur */
+  --brand-primary: #2563eb;        /* warm blauw */
+  --brand-primary-soft: #eff6ff;   /* lichte achtergrond */
+  --brand-primary-strong: #1d4ed8; /* donkerder blauw */
+  --brand-accent: #f97316;         /* zacht oranje, evt. later gebruiken */
 }
 
 html,
@@ -162,4 +171,204 @@ a {
 /* Footer achtergrond */
 .footer-surface-muted {
   background-color: var(--surface-muted);
+}
+
+
+
+/* Header bar */
+.header-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Brand + nav links met kleur */
+.nav-brand {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--brand-primary-strong);
+}
+
+@media (min-width: 768px) {
+  .nav-brand {
+    font-size: 1.25rem;
+  }
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 150ms ease, background-color 150ms ease;
+  padding: 0.25rem 0;
+}
+
+.nav-link:hover {
+  color: var(--brand-primary-strong);
+}
+
+/* Highlight bijvoorbeeld "Contact" als knopje, optioneel */
+.nav-link--primary {
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px;
+  background-color: var(--brand-primary-soft);
+  color: var(--brand-primary-strong);
+}
+
+.nav-link--primary:hover {
+  background-color: #dbeafe; /* iets donkerder blauw */
+}
+
+/* Ghost button (hamburger) duidelijker */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--border-subtle);
+  padding: 0.4rem 0.65rem;
+  background-color: var(--surface);
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    box-shadow 150ms ease,
+    border-color 150ms ease;
+}
+
+.btn-ghost:hover {
+  background-color: var(--brand-primary-soft);
+  border-color: #bfdbfe;
+}
+
+/* Hamburger lijnen */
+.burger-line {
+  display: block;
+  height: 2px;
+  width: 20px;
+  border-radius: 9999px;
+  background-color: var(--brand-primary-strong);
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+
+/* Footer met lichte kleur */
+.footer-surface-muted {
+  background-color: var(--surface-muted);
+}
+/* Header layout */
+.header-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Binnenkant header: flex + spacing */
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Desktop navigatie standaard verbergen; tonen vanaf md */
+.header-nav-desktop {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Mobiele menu-knop standaard tonen; verbergen vanaf md */
+.header-menu-button {
+  display: inline-flex;
+}
+
+/* Vanaf 768px (md) */
+@media (min-width: 768px) {
+  .header-nav-desktop {
+    display: flex;
+  }
+
+  .header-menu-button {
+    display: none;
+  }
+}
+
+/* Titel / brand */
+.nav-brand {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--brand-primary-strong);
+}
+
+@media (min-width: 768px) {
+  .nav-brand {
+    font-size: 1.25rem;
+  }
+}
+
+/* Alle links in het menu hetzelfde uiterlijk */
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 150ms ease, background-color 150ms ease;
+  padding: 0.25rem 0;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: var(--brand-primary-strong);
+}
+
+/* Ghost button (hamburger) */
+.btn-ghost {
+  border-radius: 9999px;
+  border: 1px solid var(--border-subtle);
+  padding: 0.4rem 0.65rem;
+  background-color: var(--surface);
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    box-shadow 150ms ease,
+    border-color 150ms ease;
+}
+
+.btn-ghost:hover {
+  background-color: var(--brand-primary-soft);
+  border-color: #bfdbfe;
+}
+
+/* Hamburger lijnen */
+.burger-line {
+  display: block;
+  height: 2px;
+  width: 20px;
+  border-radius: 9999px;
+  background-color: var(--brand-primary-strong);
+  transition: transform 150ms ease, opacity 150ms ease;
+}
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--brand-primary-strong);
+  color: white;
+
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  border-radius: 0.2rem;
+  text-decoration: none;
+
+  transition: background-color 150ms ease;
+}
+
+.button-primary:hover {
+  background-color: #1e40af; /* iets donkerder blauw */
 }
