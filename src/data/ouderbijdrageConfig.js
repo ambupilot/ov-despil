@@ -19,7 +19,7 @@ export const ouderbijdrageConfig = {
     OUDERBIJDRAGE_AMOUNT || "€25,- per leerling",
   qrValidUntilText:
     OUDERBIJDRAGE_QR_VALID_UNTIL ||
-    "QR-code geldig t/m 31 januari 2025",
+    "Dit is de lokale unrendered versie",
   paymentNote:
-    "Vermeld bij de betaling altijd de naam en groep van uw kind(eren).",
+    "Local DEV server.",
 };

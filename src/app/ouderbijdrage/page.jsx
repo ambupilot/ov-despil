@@ -56,7 +56,7 @@ export default function OuderbijdragePage() {
             </a>
             {paymentNote && (
               <p className="mt-2 text-sm text-[var(--text-subtle)]">
-                {paymentNote}
+                {/* {paymentNote} */}
               </p>
             )}
           </div>
