@@ -1,12 +1,15 @@
 // netlify/functions/budget.js
 
-export default async function handler(req, res) {
+export default async function handler(event, context) {
   const sheetUrl = process.env.BUDGET_SHEET_CSV_URL;
 
   if (!sheetUrl) {
-    return res.status(500).json({
-      error: "BUDGET_SHEET_CSV_URL is niet ingesteld in Netlify.",
-    });
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        error: "BUDGET_SHEET_CSV_URL is niet ingesteld in Netlify.",
+      }),
+    };
   }
 
   try {
@@ -17,7 +20,7 @@ export default async function handler(req, res) {
 
     const csvText = await response.text();
 
-    // CSV parsen (heel eenvoudig, voldoende voor deze use case)
+    // CSV parsen
     const lines = csvText.trim().split(/\r?\n/);
     const [headerLine, ...dataLines] = lines;
     const headers = headerLine.split(",");
@@ -29,7 +32,7 @@ export default async function handler(req, res) {
 
     const werkgroepen = dataLines
       .map((line) => line.split(","))
-      .filter((cols) => cols[idxGroep]) // filter lege regels
+      .filter((cols) => cols[idxGroep])
       .map((cols) => {
         const groep = cols[idxGroep];
         const totaalBudget = parseFloat(cols[idxTotaal] || "0");
@@ -38,6 +41,8 @@ export default async function handler(req, res) {
 
         const nettoBesteed = Math.max(0, uitgaven - inkomsten);
         const beschikbaar = totaalBudget + inkomsten;
+        const resterend = beschikbaar - uitgaven;
+
         const percentage =
           beschikbaar > 0
             ? Math.min(100, (nettoBesteed / beschikbaar) * 100)
@@ -49,34 +54,42 @@ export default async function handler(req, res) {
           uitgaven,
           inkomsten,
           nettoBesteed,
-          resterend: beschikbaar - uitgaven,
+          resterend,
           percentage: Math.round(percentage),
         };
       });
 
     const totaalBudget = werkgroepen.reduce(
-      (sum, w) => sum + w.totaalBudget,
+      (s, w) => s + w.totaalBudget,
       0
     );
     const totaalUitgaven = werkgroepen.reduce(
-      (sum, w) => sum + w.uitgaven,
+      (s, w) => s + w.uitgaven,
       0
     );
     const totaalInkomsten = werkgroepen.reduce(
-      (sum, w) => sum + w.inkomsten,
+      (s, w) => s + w.inkomsten,
       0
     );
 
-    return res.status(200).json({
-      totaalBudget,
-      totaalUitgaven,
-      totaalInkomsten,
-      werkgroepen,
-    });
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        totaalBudget,
+        totaalUitgaven,
+        totaalInkomsten,
+        werkgroepen,
+      }),
+      headers: { "Content-Type": "application/json" },
+    };
   } catch (err) {
     console.error(err);
-    return res.status(500).json({
-      error: "Kon budgetgegevens niet ophalen.",
-    });
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        error: "Kon budgetgegevens niet ophalen.",
+      }),
+      headers: { "Content-Type": "application/json" },
+    };
   }
 }
