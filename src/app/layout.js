@@ -20,12 +20,6 @@ export default function RootLayout({ children }) {
     name: "Oudervereniging [Schoolnaam]",
     url: baseUrl,
     logo: `${baseUrl}/logo.png`,
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "oudervereniging@school.nl",
-      contactType: "customer service",
-      availableLanguage: ["nl-NL"],
-    },
   };
 
   const websiteSchema = {
@@ -41,10 +35,10 @@ export default function RootLayout({ children }) {
         <JsonLd data={organizationSchema} />
         <JsonLd data={websiteSchema} />
       </head>
-      <body className="bg-white text-gray-900">
+      <body>
         <Header />
 
-        <main className="max-w-5xl mx-auto px-6 py-8">
+        <main className="page-shell">
           <Breadcrumbs />
           <BreadcrumbsSchema />
           {children}
