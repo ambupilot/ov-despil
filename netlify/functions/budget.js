@@ -8,25 +8,19 @@ export default async function handler(event, context) {
       JSON.stringify({
         error: "BUDGET_SHEET_CSV_URL is niet ingesteld in Netlify.",
       }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json" },
-      }
+      { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }
 
   try {
     const response = await fetch(sheetUrl);
-    if (!response.ok) {
-      throw new Error(`Sheet fetch failed: ${response.status}`);
-    }
-
     const csvText = await response.text();
 
     const lines = csvText.trim().split(/\r?\n/);
     const [headerLine, ...dataLines] = lines;
     const headers = headerLine.split(",");
 
+    const idxType = headers.indexOf("type");
     const idxGroep = headers.indexOf("groep");
     const idxTotaal = headers.indexOf("totaal_budget");
     const idxUitgaven = headers.indexOf("uitgaven");
@@ -36,66 +30,54 @@ export default async function handler(event, context) {
       .map((line) => line.split(","))
       .filter((cols) => cols[idxGroep])
       .map((cols) => {
+        const type = cols[idxType] || "uitgaven";
         const groep = cols[idxGroep];
         const totaalBudget = parseFloat(cols[idxTotaal] || "0");
         const uitgaven = parseFloat(cols[idxUitgaven] || "0");
         const inkomsten = parseFloat(cols[idxInkomsten] || "0");
 
-        const nettoBesteed = Math.max(0, uitgaven - inkomsten);
-        const beschikbaar = totaalBudget + inkomsten;
-        const resterend = beschikbaar - uitgaven;
-        const percentage =
-          beschikbaar > 0
-            ? Math.min(100, (nettoBesteed / beschikbaar) * 100)
-            : 0;
+        let percentage = 0;
+        let resterend = 0;
+        let netto = 0;
+
+        if (type === "uitgaven") {
+          netto = uitgaven;
+          resterend = totaalBudget - uitgaven;
+          percentage =
+            totaalBudget > 0
+              ? Math.min(100, (uitgaven / totaalBudget) * 100)
+              : 0;
+        }
+
+        if (type === "inkomsten") {
+          netto = inkomsten;
+          resterend = totaalBudget - inkomsten;
+          percentage =
+            totaalBudget > 0
+              ? Math.min(100, (inkomsten / totaalBudget) * 100)
+              : 0;
+        }
 
         return {
+          type,
           groep,
           totaalBudget,
           uitgaven,
           inkomsten,
-          nettoBesteed,
+          netto,
           resterend,
           percentage: Math.round(percentage),
         };
       });
 
-    const totaalBudget = werkgroepen.reduce(
-      (s, w) => s + w.totaalBudget,
-      0
-    );
-    const totaalUitgaven = werkgroepen.reduce(
-      (s, w) => s + w.uitgaven,
-      0
-    );
-    const totaalInkomsten = werkgroepen.reduce(
-      (s, w) => s + w.inkomsten,
-      0
-    );
-
-    return new Response(
-      JSON.stringify({
-        totaalBudget,
-        totaalUitgaven,
-        totaalInkomsten,
-        werkgroepen,
-      }),
-      {
-        status: 200,
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    return new Response(JSON.stringify({ werkgroepen }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
   } catch (err) {
-    console.error(err);
-
     return new Response(
-      JSON.stringify({
-        error: "Kon budgetgegevens niet ophalen.",
-      }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json" },
-      }
+      JSON.stringify({ error: "Kon budgetgegevens niet ophalen." }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }
 }

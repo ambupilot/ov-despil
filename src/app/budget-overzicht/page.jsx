@@ -1,11 +1,10 @@
-// src/app/budget-overzicht/page.jsx
-import WebPageSchema from "@/components/WebPageSchema";
 import BudgetOverviewClient from "@/components/BudgetOverviewClient";
+import WebPageSchema from "@/components/WebPageSchema";
 
 export const metadata = {
   title: "Budgetoverzicht – Oudervereniging De Spil",
   description:
-    "Inzicht in het budget van de werkgroepen en de besteding van de ouderbijdrage.",
+    "Inzicht in de uitgavenposten en inkomstenacties van de oudervereniging.",
 };
 
 export default function BudgetOverzichtPage() {
@@ -17,7 +16,9 @@ export default function BudgetOverzichtPage() {
         type="WebPage"
       />
 
-      <BudgetOverviewClient />
+      <section className="page-shell space-y-10">
+        <BudgetOverviewClient />
+      </section>
     </>
   );
 }
