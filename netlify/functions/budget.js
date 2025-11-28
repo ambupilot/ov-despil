@@ -4,12 +4,15 @@ export default async function handler(event, context) {
   const sheetUrl = process.env.BUDGET_SHEET_CSV_URL;
 
   if (!sheetUrl) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
+    return new Response(
+      JSON.stringify({
         error: "BUDGET_SHEET_CSV_URL is niet ingesteld in Netlify.",
       }),
-    };
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   }
 
   try {
@@ -20,7 +23,6 @@ export default async function handler(event, context) {
 
     const csvText = await response.text();
 
-    // CSV parsen
     const lines = csvText.trim().split(/\r?\n/);
     const [headerLine, ...dataLines] = lines;
     const headers = headerLine.split(",");
@@ -42,7 +44,6 @@ export default async function handler(event, context) {
         const nettoBesteed = Math.max(0, uitgaven - inkomsten);
         const beschikbaar = totaalBudget + inkomsten;
         const resterend = beschikbaar - uitgaven;
-
         const percentage =
           beschikbaar > 0
             ? Math.min(100, (nettoBesteed / beschikbaar) * 100)
@@ -72,24 +73,29 @@ export default async function handler(event, context) {
       0
     );
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
+    return new Response(
+      JSON.stringify({
         totaalBudget,
         totaalUitgaven,
         totaalInkomsten,
         werkgroepen,
       }),
-      headers: { "Content-Type": "application/json" },
-    };
+      {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   } catch (err) {
     console.error(err);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
+
+    return new Response(
+      JSON.stringify({
         error: "Kon budgetgegevens niet ophalen.",
       }),
-      headers: { "Content-Type": "application/json" },
-    };
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   }
 }
