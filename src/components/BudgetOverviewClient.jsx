@@ -296,15 +296,16 @@ export default function BudgetOverviewClient() {
               )}
 
               {/* Progressbar */}
-              <div className="h-3 rounded-full bg-[var(--surface-muted)] overflow-hidden">
-                <div
-                  className="h-full transition-all"
-                  style={{
-                    width: `${percentage}%`,
-                    backgroundColor: getProgressColor(w.type, percentage),
-                  }}
-                />
-              </div>
+              <div className="budget-bar-track">
+  <div
+    className="budget-bar-fill"
+    style={{
+      width: `${percentage}%`,
+      backgroundColor: getProgressColor(w.type, percentage),
+    }}
+  />
+</div>
+
 
               <p className="text-xs text-[var(--text-subtle)]">
                 {percentage}% van het doel is{" "}
