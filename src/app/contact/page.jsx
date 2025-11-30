@@ -1,4 +1,6 @@
-// src/app/contact/page.jsx
+"use client";
+
+import { useState } from "react";
 import WebPageSchema from "@/components/WebPageSchema";
 
 export const metadata = {
@@ -8,6 +10,34 @@ export const metadata = {
 };
 
 export default function ContactPage() {
+  const [status, setStatus] = useState("idle");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    setStatus("loading");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      if (!response.ok) {
+        throw new Error("Netlify Forms gaf een fout");
+      }
+
+      form.reset();
+      setStatus("success");
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+  }
+
   return (
     <>
       <WebPageSchema
@@ -35,7 +65,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Contactformulier (Netlify Forms) */}
+        {/* Contactformulier */}
         <section className="card space-y-4">
           <h2>Stuur ons een bericht</h2>
           <p className="text-sm text-[var(--ov-text-secondary)]">
@@ -44,15 +74,13 @@ export default function ContactPage() {
 
           <form
             name="contact"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
             className="space-y-4"
           >
-            {/* Verplicht voor Netlify Forms */}
+            {/* Moet overeenkomen met static form in __forms.html */}
             <input type="hidden" name="form-name" value="contact" />
 
-            {/* Honeypot tegen bots */}
+            {/* Honeypot tegen bots (zelfde naam als in __forms.html) */}
             <p className="hidden">
               <label>
                 Laat dit veld leeg als je een mens bent:{" "}
@@ -117,15 +145,26 @@ export default function ContactPage() {
               />
             </div>
 
-            {/* (Optioneel) Netlify reCAPTCHA - eerst in Netlify activeren */}
-            {/*
-            <div className="mt-2" data-netlify-recaptcha="true"></div>
-            */}
-
-            <div className="pt-2">
-              <button type="submit" className="button-primary">
-                Verstuur bericht
+            <div className="pt-2 flex items-center gap-4">
+              <button
+                type="submit"
+                className="button-primary"
+                disabled={status === "loading"}
+              >
+                {status === "loading" ? "Versturen…" : "Verstuur bericht"}
               </button>
+
+              {status === "success" && (
+                <p className="text-xs text-green-600">
+                  Bedankt! Je bericht is verzonden.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-xs text-red-600">
+                  Er ging iets mis bij het versturen. Probeer het later nog
+                  een keer.
+                </p>
+              )}
             </div>
           </form>
         </section>
