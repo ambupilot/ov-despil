@@ -1,7 +1,5 @@
-"use client";
-
-import { useState } from "react";
 import WebPageSchema from "@/components/WebPageSchema";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
   title: "Contact – Oudervereniging De Spil",
@@ -10,34 +8,6 @@ export const metadata = {
 };
 
 export default function ContactPage() {
-  const [status, setStatus] = useState("idle");
-
-  async function handleSubmit(event) {
-    event.preventDefault();
-    setStatus("loading");
-
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch("/__forms.html", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString(),
-      });
-
-      if (!response.ok) {
-        throw new Error("Netlify Forms gaf een fout");
-      }
-
-      form.reset();
-      setStatus("success");
-    } catch (err) {
-      console.error(err);
-      setStatus("error");
-    }
-  }
-
   return (
     <>
       <WebPageSchema
@@ -65,15 +35,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Contactformulier */}
-        <section className="card space-y-4">
-          <h2>Stuur ons een bericht</h2>
-          <p className="text-sm text-[var(--ov-text-secondary)]">
-            Velden met een * zijn verplicht.
-          </p>
-
-          
-        </section>
+        <ContactForm />
       </section>
     </>
   );
