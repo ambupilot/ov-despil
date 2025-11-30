@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const navItems = [
@@ -15,9 +16,17 @@ export default function Header() {
   return (
     <header className="header-bar">
       <div className="page-shell py-3 header-inner">
-        {/* Logo / titel links */}
-        <Link href="/" className="nav-brand">
-          Oudervereniging De Spil
+        {/* Logo + titel links */}
+        <Link href="/" className="flex items-center gap-3 nav-brand">
+          <Image
+            src="/images/logo_de_spil.jpg"
+            alt="Logo De Spil"
+            width={120}
+            height={80}
+            className="h-10 w-auto rounded-full"
+            priority
+          />
+          <span>Oudervereniging De Spil</span>
         </Link>
 
         {/* Alles rechts uitlijnen */}
@@ -68,7 +77,7 @@ export default function Header() {
 
       {/* Mobiele nav-panel */}
       {open && (
-        <nav className="md:hidden border-t border-[var(--border-subtle)] bg-white/95">
+        <nav className="md:hidden border-t border-[var(--ov-border-subtle)] bg-white/95">
           <div className="page-shell py-3 flex flex-col gap-2">
             {navItems.map((item) => (
               <Link

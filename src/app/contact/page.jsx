@@ -27,10 +27,7 @@ export default function ContactPage() {
 
           <div className="mt-4 space-y-1 text-sm text-[var(--ov-text-secondary)]">
             <p>
-              <strong>E-mail:</strong> oudervereniging@despil.nl
-            </p>
-            <p>
-              <strong>School:</strong> Basisschool De Spil
+              <strong>E-mail:</strong> hallo@ovdespil.nl
             </p>
           </div>
         </section>

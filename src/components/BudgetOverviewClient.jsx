@@ -6,16 +6,18 @@ import { useEffect, useState } from "react";
 // Progressbar kleuren op basis van type + percentage
 // ----------------------------------------
 function getProgressColor(type, percentage) {
+  // Uitgaven: hoe voller, hoe kritischer
   if (type === "uitgaven") {
-    if (percentage < 50) return "#22c55e"; // groen
-    if (percentage < 80) return "#f97316"; // oranje
-    return "#dc2626"; // rood
+    if (percentage < 50) return "#55B24F"; // groen
+    if (percentage < 80) return "#17A2B8"; // cyan
+    return "rgba(165,147,124,1)"; // bruin als het echt vol loopt
   }
 
+  // Inkomsten: hoe voller, hoe beter
   if (type === "inkomsten") {
-    if (percentage < 50) return "#dc2626"; // rood
-    if (percentage < 80) return "#f97316"; // oranje
-    return "#22c55e"; // groen
+    if (percentage < 50) return "rgba(165,147,124,1)"; // bruin = begin
+    if (percentage < 80) return "#17A2B8"; // cyan
+    return "#55B24F"; // groen = doel in zicht / gehaald
   }
 
   return "#6b7280";
