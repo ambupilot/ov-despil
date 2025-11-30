@@ -286,6 +286,7 @@ export default function BudgetOverviewClient() {
       {/* ----------------------------------------
           LEGENDA
       ---------------------------------------- */}
+      {/*
       <section className="card space-y-3">
         <h3 className="font-semibold">Legenda</h3>
 
@@ -307,7 +308,7 @@ export default function BudgetOverviewClient() {
           </div>
 
         </div>
-      </section>
+      </section> */}
     </section>
   );
 }
