@@ -102,6 +102,72 @@ p {
 }
 
 /* ============================
+   OV De Spil – custom lijststijl
+============================ */
+
+.ov-list {
+  margin: 0.75rem 0;
+  padding-left: 0;               /* we maken eigen bullets */
+  list-style: none;              /* standaard bullets uit */
+}
+
+.ov-list li {
+  position: relative;
+  padding-left: 1.6rem;          /* ruimte voor custom bullet */
+  margin-bottom: 0.55rem;        /* prettige spacing */
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* Custom bullet */
+.ov-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6rem;                   /* mooi in het midden van de tekst */
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background-color: var(--brand-primary-strong); /* groen */
+}
+
+/* Laatste item minder marge */
+.ov-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================
+   Lijsten (ul / ol / li)
+============================ */
+
+ul,
+ol {
+  margin: 0;
+  padding-left: 1.25rem; /* standaard bullet indent */
+}
+
+li {
+  font-size: 1rem;               /* zelfde als <p> */
+  line-height: 1.7;              /* zelfde als <p> */
+  color: var(--text-secondary);  /* zelfde als <p> */
+  margin-bottom: 0.4rem;         /* kleine spacing tussen regels */
+}
+
+ul li {
+  list-style-type: none;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+/* Optioneel: laatste li iets minder marge */
+li:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================
    Layout helpers
 ============================ */
 

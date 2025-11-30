@@ -16,7 +16,7 @@ export const ouderbijdrageConfig = {
     OUDERBIJDRAGE_QR_IMAGE ||
     "/images/qr/ouderbijdrage-qr.png",
   contributionAmount:
-    OUDERBIJDRAGE_AMOUNT || "€25,- per leerling",
+    OUDERBIJDRAGE_AMOUNT || "€45,- per leerling",
   qrValidUntilText:
     OUDERBIJDRAGE_QR_VALID_UNTIL ||
     "Dit is de lokale unrendered versie",

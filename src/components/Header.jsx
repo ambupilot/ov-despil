@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import OuderbijdrageButton from "@/components/OuderbijdrageButton";
+
 
 const navItems = [
   { href: "/ouderbijdrage", label: "Ouderbijdrage" },
@@ -38,6 +40,12 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
+             {/* Extra call-to-action rechts in de header */}
+  <OuderbijdrageButton
+    size="small"
+    showAmount={false}
+    className="ml-4"
+  />
           </nav>
 
           {/* Mobiele hamburger (alleen zichtbaar op small screens via CSS) */}
