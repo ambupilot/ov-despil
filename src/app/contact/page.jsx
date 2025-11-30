@@ -1,5 +1,4 @@
 // src/app/contact/page.jsx
-// Voor een nieuwe rebase
 import WebPageSchema from "@/components/WebPageSchema";
 
 export const metadata = {
@@ -28,7 +27,7 @@ export default function ContactPage() {
 
           <div className="mt-4 space-y-1 text-sm text-[var(--ov-text-secondary)]">
             <p>
-              <strong>E-mail:</strong> hallo@ovdespil.nl
+              <strong>E-mail:</strong> oudervereniging@despil.nl
             </p>
             <p>
               <strong>School:</strong> Basisschool De Spil
@@ -36,7 +35,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Contactformulier */}
+        {/* Contactformulier (Netlify Forms) */}
         <section className="card space-y-4">
           <h2>Stuur ons een bericht</h2>
           <p className="text-sm text-[var(--ov-text-secondary)]">
