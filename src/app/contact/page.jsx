@@ -1,4 +1,5 @@
 // src/app/contact/page.jsx
+// Voor een nieuwe rebase
 import WebPageSchema from "@/components/WebPageSchema";
 
 export const metadata = {
