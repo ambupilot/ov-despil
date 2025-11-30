@@ -37,7 +37,8 @@ Beste ouders/verzorgers,<br/><br/>
 
 De oudervereniging organiseert jaarlijks activiteiten die niet door de overheid worden gefinancierd. Denk aan Sinterklaas, Kerst, de Koningsspelen én de schoolreisjes. Daarom vragen wij een vrijwillige ouderbijdrage van €45 per kind per jaar.</p>
 
-<h3>Waar gaat uw bijdrage naartoe?</h3>
+<h3>Hoe besteden wij de ouderbijdrage?</h3>
+<p>We splisten het bedrag op in een bedrag voor de schoolreisjes, en een bedrag voor de activiteiten.</p>
 <p>
 €25 voor schoolreisjes (sparen over 8 jaar)<br/>
 Kinderen gaan vier keer op schoolreisje tijdens hun basisschoolperiode:
@@ -54,7 +55,7 @@ Kinderen gaan vier keer op schoolreisje tijdens hun basisschoolperiode:
 Omdat de hogere groepen duurder zijn, sparen we elk jaar een vast bedrag.<br/>
 Het totaal van het gespaarde bedrag is € 200,- over 8 jaar. <br/>
 In werkelijkheid wordt voor ongeveer 65% van de kinderen de ouderbijdrage betaald. En daar moeten we rekening mee houden.<br/>
-Gemiddeld per kind betekent dat er dus eigenlijk een budget is voor € 130,- per 8 schooljaren.</p>
+Gemiddeld per kind (want ALLE kinderen gaan mee op de schoolreisjes) betekent dat er dus eigenlijk een budget is voor € 130,- per 8 schooljaren.</p>
 
 <p>
   €20 voor activiteiten en feesten<br/>
