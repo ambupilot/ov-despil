@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import OuderbijdrageButton from "@/components/OuderbijdrageButton";
-
 
 const navItems = [
   { href: "/ouderbijdrage", label: "Ouderbijdrage" },
@@ -17,81 +16,76 @@ export default function Header() {
 
   return (
     <header className="header-bar">
-      <div className="page-shell py-3 header-inner">
-        {/* Logo + titel links */}
-        <Link href="/" className="flex items-center gap-3 nav-brand">
-          <Image
-            src="/images/logo_de_spil.jpg"
-            alt="Logo De Spil"
-            width={120}
-            height={80}
-            className="h-10 w-auto rounded-full"
-            priority
-          />
-          <span>Oudervereniging De Spil</span>
-        </Link>
+      <div className="page-shell py-3">
+        {/* Flex container die op desktop in 2 kolommen werkt via basis-1/3 & basis-2/3 */}
+        <div className="header-inner flex flex-col gap-3 md:flex-row md:items-center md:gap-6">
+          {/* LINKERKOLOM – altijd logo + tekst */}
+          <div className="md:basis-1/3">
+            <Link href="/" className="flex items-center gap-3 nav-brand">
+              <Image
+                src="/images/logo_de_spil.jpg"
+                alt="Logo De Spil"
+                width={100}
+                height={100}
+                className="h-10 w-auto rounded-full"
+                priority
+              />
+              <span>Oudervereniging<br/>Basisschool De Spil</span>
+            </Link>
+          </div>
 
-        {/* Alles rechts uitlijnen */}
-        <div className="ml-auto flex items-center gap-4">
-          {/* Desktop navigatie */}
-          <nav className="header-nav-desktop">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="nav-link">
-                {item.label}
-              </Link>
-            ))}
-             {/* Extra call-to-action rechts in de header */}
-  <OuderbijdrageButton
-    size="small"
-    showAmount={false}
-    className="ml-4"
-  />
-          </nav>
-
-          {/* Mobiele hamburger (alleen zichtbaar op small screens via CSS) */}
-          <button
-            type="button"
-            className="btn-ghost header-menu-button"
-            onClick={() => setOpen((prev) => !prev)}
-            aria-label="Navigatie openen of sluiten"
-            aria-expanded={open}
-          >
-            <span className="sr-only">Menu</span>
-            <div className="flex flex-col gap-1.5">
-              <span
-                className="burger-line"
-                style={
-                  open
-                    ? { transform: "translateY(6px) rotate(45deg)" }
-                    : undefined
-                }
-              />
-              <span
-                className="burger-line"
-                style={open ? { opacity: 0 } : undefined}
-              />
-              <span
-                className="burger-line"
-                style={
-                  open
-                    ? { transform: "translateY(-6px) rotate(-45deg)" }
-                    : undefined
-                }
-              />
+          {/* RECHTERKOLOM – 2 rijen */}
+          <div className="md:basis-2/3 flex flex-col gap-2 md:items-end w-full">
+            {/* Rij 1: desktop betaalknop rechts uitgelijnd */}
+            <div className="hidden md:flex w-full justify-end">
+              <OuderbijdrageButton size="small" showAmount={false} />
             </div>
-          </button>
+
+            {/* Rij 2:
+                - mobiel: links betaalknop, rechts menuknop
+                - desktop: rechts menu (nav) */}
+            <div className="flex w-full items-center justify-between md:justify-end gap-3">
+              {/* Mobiele betaalknop (links) */}
+              <div className="md:hidden">
+                <OuderbijdrageButton
+                  size="small"
+                  showAmount={false}
+                />
+              </div>
+
+              {/* Desktop menu (rechts onder, rechts uitgelijnd) */}
+              <nav className="hidden md:flex header-nav-desktop">
+                {navItems.map((item) => (
+                  <Link key={item.href} href={item.href} className="nav-link">
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+
+              {/* Mobiele menuknop – rechts uitgelijnd */}
+              <button
+                type="button"
+                className="btn-ghost header-menu-button md:hidden"
+                onClick={() => setOpen((prev) => !prev)}
+                aria-label="Navigatie openen of sluiten"
+                aria-expanded={open}
+              >
+                Menu
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Mobiele nav-panel */}
       {open && (
-        <nav className="md:hidden border-t border-[var(--ov-border-subtle)] bg-white/95">
-          <div className="page-shell py-3 flex flex-col gap-2">
+        <nav className="md:hidden border-t border-[var(--border-subtle)] bg-white/95">
+          <div className="page-shell py-4 flex flex-col gap-1 items-stretch">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="nav-link"
+                className="mobile-nav-link"
                 onClick={() => setOpen(false)}
               >
                 {item.label}

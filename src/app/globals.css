@@ -28,7 +28,7 @@
   /* Brand */
   --brand-primary: var(--green);
   --brand-primary-strong: #3e893a; /* donkerder groen voor hover/branding */
-  --brand-primary-soft: rgba(85, 178, 79, 0.1);
+  --brand-primary-soft: rgba(85, 178, 79, 0.12);
 
   /* Accent (cyan als accent) */
   --accent: var(--cyan);
@@ -63,7 +63,9 @@ samp {
     "Courier New", monospace;
 }
 
-/* Typografie */
+/* ============================
+   Typografie
+============================ */
 
 h1 {
   font-size: 1.875rem;
@@ -101,57 +103,19 @@ p {
   color: var(--text-secondary);
 }
 
-/* ============================
-   OV De Spil – custom lijststijl
-============================ */
-
-.ov-list {
-  margin: 0.75rem 0;
-  padding-left: 0;               /* we maken eigen bullets */
-  list-style: none;              /* standaard bullets uit */
-}
-
-.ov-list li {
-  position: relative;
-  padding-left: 1.6rem;          /* ruimte voor custom bullet */
-  margin-bottom: 0.55rem;        /* prettige spacing */
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
-}
-
-/* Custom bullet */
-.ov-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.6rem;                   /* mooi in het midden van de tekst */
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 50%;
-  background-color: var(--brand-primary-strong); /* groen */
-}
-
-/* Laatste item minder marge */
-.ov-list li:last-child {
-  margin-bottom: 0;
-}
-
-/* ============================
-   Lijsten (ul / ol / li)
-============================ */
+/* Lijsten algemeen */
 
 ul,
 ol {
   margin: 0;
-  padding-left: 1.25rem; /* standaard bullet indent */
+  padding-left: 1.25rem;
 }
 
 li {
-  font-size: 1rem;               /* zelfde als <p> */
-  line-height: 1.7;              /* zelfde als <p> */
-  color: var(--text-secondary);  /* zelfde als <p> */
-  margin-bottom: 0.4rem;         /* kleine spacing tussen regels */
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
 }
 
 ul li {
@@ -162,8 +126,39 @@ ol li {
   list-style-type: decimal;
 }
 
-/* Optioneel: laatste li iets minder marge */
 li:last-child {
+  margin-bottom: 0;
+}
+
+/* OV De Spil – custom lijststijl */
+
+.ov-list {
+  margin: 0.75rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.ov-list li {
+  position: relative;
+  padding-left: 1.6rem; /* extra ruimte tussen bullet en tekst */
+  margin-bottom: 0.55rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.ov-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background-color: var(--brand-primary-strong);
+}
+
+.ov-list li:last-child {
   margin-bottom: 0;
 }
 
@@ -208,6 +203,7 @@ li:last-child {
 }
 
 /* Twee kolommen layout (bijv. ouderbijdrage) */
+
 .two-column-layout {
   display: grid;
   gap: 2rem;
@@ -238,6 +234,7 @@ li:last-child {
 .header-inner {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
 }
 
@@ -250,8 +247,10 @@ li:last-child {
 
 /* Mobiele menu-knop standaard tonen; verbergen vanaf md */
 .header-menu-button {
-  display: inline-flex;
-}
+  display: inline-flex !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding-inline: 0.9rem;}
 
 /* Vanaf 768px (md): desktopmenu aan, hamburger uit */
 @media (min-width: 768px) {
@@ -260,7 +259,7 @@ li:last-child {
   }
 
   .header-menu-button {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -363,7 +362,7 @@ li:last-child {
   font-size: 0.9rem;
   font-weight: 600;
 
-  border-radius: 0.2rem;
+  border-radius: 0.5rem;
   text-decoration: none;
   border: none;
   cursor: pointer;
@@ -386,7 +385,7 @@ li:last-child {
 }
 
 /* ============================
-   Breadcrumbs – verbeterde versie
+   Breadcrumbs
 ============================ */
 
 .breadcrumbs {
@@ -396,7 +395,6 @@ li:last-child {
   gap: 0.35rem;
   font-size: 0.8rem;
   color: var(--text-subtle);
-  margin-bottom: 1rem;
 }
 
 .breadcrumbs a {
@@ -419,55 +417,17 @@ li:last-child {
    Forms
 ============================ */
 
-label {
-  font-size: 0.9rem;
-  color: var(--text-primary);
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-textarea {
-  font-family: var(--font-family-sans-serif);
-  display: block;
-  width: 100%;
-  font-size: 0.95rem;
-  line-height: 1.4;
-  padding: 0.6rem 0.75rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--border-subtle);
-  background-color: #ffffff;
-}
-
-/* Laat Tailwind .px-3 / .py-2 nog steeds werken, maar dit geeft basis-hoogte.
-   (Onze CSS staat NA tailwind utilities, dus dit wint – precies de bedoeling) */
-
-textarea {
-  resize: vertical;
-}
-
-/* ============================
-   Footer
-============================ */
-
-.footer-surface-muted {
-  background-color: var(--surface-muted);
-}
-/* ============================
-   Forms – betere spacing
-============================ */
-
 .form-field {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem; /* ruimte tussen label en input */
+  gap: 0.4rem;
 }
 
 label {
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-primary);
-  margin-bottom: 0.1rem; /* mini-buffer */
+  margin-bottom: 0.1rem;
 }
 
 input[type="text"],
@@ -479,7 +439,7 @@ textarea {
   width: 100%;
   font-size: 0.95rem;
   line-height: 1.5;
-  padding: 0.7rem 0.9rem;  /* <-- hogere padding */
+  padding: 0.7rem 0.9rem;
   border-radius: 0.6rem;
   border: 1px solid var(--border-subtle);
   background-color: #ffffff;
@@ -489,20 +449,34 @@ textarea {
   resize: vertical;
 }
 /* ============================
-   Forceer zichtbaar/verborgen gedrag menu button
+   Mobiele navigatie links
 ============================ */
 
-/* Altijd zichtbaar op mobiel */
-.header-menu-button {
-  display: inline-flex !important;
+.mobile-nav-link {
+  width: 100%;
+  text-align: center;
+  font-size: 1.05rem;        /* groter voor duimen */
+  font-weight: 500;
+  padding: 0.85rem 0;        /* meer hoogte tussen items */
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: background-color 150ms ease, color 150ms ease;
 }
 
-/* Vanaf md: verstoppen */
-@media (min-width: 768px) {
-  .header-menu-button {
-    display: none !important;
-  }
+.mobile-nav-link:hover {
+  background-color: var(--brand-primary-soft);
+  color: var(--brand-primary-strong);
 }
+
+/* ============================
+   Footer
+============================ */
+
+.footer-surface-muted {
+  background-color: var(--surface-muted);
+}
+
 /* ============================
    Budget progress bars
 ============================ */
@@ -510,7 +484,7 @@ textarea {
 .budget-bar-track {
   position: relative;
   width: 100%;
-  height: 0.75rem;              /* vaste hoogte */
+  height: 0.75rem;
   border-radius: 9999px;
   background-color: var(--surface-muted);
   overflow: hidden;
@@ -518,7 +492,7 @@ textarea {
 
 .budget-bar-fill {
   position: absolute;
-  inset: 0;                     /* top:0; right:0; bottom:0; left:0 */
+  inset: 0;
   width: 0;
   border-radius: inherit;
   transition: width 220ms ease-out;
