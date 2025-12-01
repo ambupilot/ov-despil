@@ -2,9 +2,9 @@
 import WebPageSchema from "@/components/WebPageSchema";
 
 export const metadata = {
-  title: "Oudervereniging [Schoolnaam] – Samen voor de school",
+  title: "Oudervereniging Basisschool De spil - Nijmegen",
   description:
-    "Officiële website van de oudervereniging van [Schoolnaam]. Met nieuws, activiteiten en informatie voor ouders.",
+    "Officiële website van de oudervereniging van basisschool De Spil in Nijmegen. Samen zorgen we voor een fijne, veilige en betrokken schoolomgeving voor alle kinderen.",
 };
 
 export default function HomePage() {
