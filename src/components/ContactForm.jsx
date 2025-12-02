@@ -32,10 +32,17 @@ export default function ContactForm() {
     }
   }
 
-  // Toon de succes-modal 3 seconden bij status "success"
+  // === SUCCES-MODAL GEDRAG ===
   useEffect(() => {
     if (status !== "success") return;
 
+    // DEV: modal blijft permanent staan
+    if (process.env.NODE_ENV === "development") {
+      setShowModal(true);
+      return;
+    }
+
+    // PROD: modal 3 seconden tonen
     setShowModal(true);
     const timeout = setTimeout(() => {
       setShowModal(false);
@@ -47,14 +54,66 @@ export default function ContactForm() {
 
   return (
     <>
-      {/* Succes-modal */}
+      {/* Succes-modal: inline styles zodat hij altijd gecentreerd en groen is */}
       {showModal && (
-        <div className="fixed inset-0 z-[80] flex items-start justify-center pt-28 px-4">
-          <div className="max-w-md w-full rounded-xl border border-green-700 bg-green-50 shadow-xl px-5 py-4">
-            <h2 className="text-green-800 font-semibold mb-1">
+        <div
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 9999,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "1rem",
+          }}
+        >
+          <div
+            style={{
+              maxWidth: "28rem",
+              width: "100%",
+              padding: "1.25rem 1.5rem",
+              borderRadius: "1rem",
+              border: "2px solid #15803d", // donkergroen
+              backgroundColor: "#dcfce7", // lichtgroen
+              boxShadow: "0 20px 45px rgba(0,0,0,0.18)",
+              textAlign: "center",
+              color: "#14532d",
+            }}
+          >
+            <div
+              style={{
+                margin: "0 auto 0.75rem",
+                width: "3rem",
+                height: "3rem",
+                borderRadius: "9999px",
+                backgroundColor: "#bbf7d0", // iets donkerder groen
+                border: "1px solid #4ade80",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "1.75rem",
+                fontWeight: 700,
+              }}
+            >
+              ✓
+            </div>
+
+            <h2
+              style={{
+                fontSize: "1.1rem",
+                fontWeight: 600,
+                marginBottom: "0.25rem",
+              }}
+            >
               Bericht verzonden
             </h2>
-            <p className="text-sm text-green-900">
+
+            <p
+              style={{
+                fontSize: "0.95rem",
+                lineHeight: 1.5,
+              }}
+            >
               Bedankt voor je bericht. We nemen zo snel mogelijk contact met je
               op.
             </p>
