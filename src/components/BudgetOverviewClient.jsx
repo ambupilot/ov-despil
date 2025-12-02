@@ -167,6 +167,7 @@ export default function BudgetOverviewClient() {
   return (
     <section className="space-y-10">
       {/* TOTALEN OVERZICHT */}
+      {/*}
       <section className="card space-y-4">
         <h1>Budgetoverzicht</h1>
         <p>Hieronder vind je een samenvatting van alle posten.</p>
@@ -208,7 +209,7 @@ export default function BudgetOverviewClient() {
             </p>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* FILTERS + SORTERING */}
       <section className="flex flex-wrap gap-4 card">
