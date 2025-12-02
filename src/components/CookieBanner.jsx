@@ -26,7 +26,7 @@ export default function CookieBanner() {
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-60">
+    <div className="cookie-banner-wrapper">
       <div className="page-shell pb-4">
         <div className="cookie-banner">
           <div className="cookie-text">

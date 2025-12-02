@@ -538,6 +538,13 @@ textarea {
   display: flex;
   gap: 0.5rem;
 }
+.cookie-banner-wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60; /* hoog genoeg boven alles */
+}
 
 @media (min-width: 640px) {
   .cookie-banner {

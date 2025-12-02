@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Oudervereniging [Schoolnaam]",
+    name: "Oudervereniging Basisschool De Spil",
     url: baseUrl,
     logo: `${baseUrl}/logo.png`,
   };
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "WebSite",
     url: baseUrl,
-    name: "Oudervereniging [Schoolnaam]",
+    name: "Oudervereniging Basisschool De Spil",
   };
 
   return (
@@ -44,7 +44,6 @@ export default function RootLayout({ children }) {
           <BreadcrumbsSchema />
           {children}
         </main>
-
         <Footer />
         <CookieBanner />
       </body>
