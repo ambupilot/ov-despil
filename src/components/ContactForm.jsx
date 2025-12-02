@@ -153,7 +153,7 @@ export default function ContactForm() {
                 className="rounded-md border border-[var(--border-subtle)] px-3 py-2 text-sm bg-white"
               />
             </div>
-
+<br />
             {/* Telefoon */}
             <div className="flex flex-col gap-1">
               <label htmlFor="telefoon" className="text-sm font-medium">
@@ -167,7 +167,7 @@ export default function ContactForm() {
               />
             </div>
           </div>
-
+<br />
           {/* E-mail */}
           <div className="flex flex-col gap-1">
             <label htmlFor="email" className="text-sm font-medium">
@@ -181,7 +181,7 @@ export default function ContactForm() {
               className="rounded-md border border-[var(--border-subtle)] px-3 py-2 text-sm bg-white"
             />
           </div>
-
+<br />
           {/* Bericht */}
           <div className="flex flex-col gap-1">
             <label htmlFor="bericht" className="text-sm font-medium">
@@ -195,7 +195,7 @@ export default function ContactForm() {
               className="rounded-md border border-[var(--border-subtle)] px-3 py-2 text-sm bg-white resize-vertical"
             />
           </div>
-
+<br />
           <div className="pt-2 flex items-center gap-4">
             <button
               type="submit"
