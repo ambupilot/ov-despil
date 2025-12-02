@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import BreadcrumbsSchema from "@/components/BreadcrumbsSchema";
 import JsonLd from "@/components/JsonLd";
+import CookieBanner from "@/components/CookieBanner";
 
 const baseUrl = "https://oudervereniging-school.nl";
 
@@ -45,6 +46,7 @@ export default function RootLayout({ children }) {
         </main>
 
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   );
