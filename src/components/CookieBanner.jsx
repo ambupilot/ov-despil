@@ -12,7 +12,8 @@ export default function CookieBanner() {
     if (typeof window === "undefined") return;
     const dismissed = window.localStorage.getItem(STORAGE_KEY);
     if (!dismissed) {
-      setVisible(true);
+      const showHandle = requestAnimationFrame(() => setVisible(true));
+      return () => cancelAnimationFrame(showHandle);
     }
   }, []);
 

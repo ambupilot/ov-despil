@@ -10,7 +10,7 @@ export default function ContactSuccessModal() {
 
     // Toon modal als we via /contact#success binnenkomen
     if (window.location.hash === "#success") {
-      setVisible(true);
+      const showHandle = requestAnimationFrame(() => setVisible(true));
 
       const timeout = setTimeout(() => {
         setVisible(false);
@@ -23,7 +23,10 @@ export default function ContactSuccessModal() {
         );
       }, 3000); // 3 seconden zichtbaar
 
-      return () => clearTimeout(timeout);
+      return () => {
+        cancelAnimationFrame(showHandle);
+        clearTimeout(timeout);
+      };
     }
   }, []);
 
