@@ -81,7 +81,7 @@ Gemiddeld per kind (want ALLE kinderen gaan mee op de schoolreisjes) betekent da
   
   <li>Houdt activiteiten betaalbaar en continu</li>
   
-  <li>Uw bijdrage komt volledig ten goede aan uw kind</li>
+  <li>Uw bijdrage komt volledig ten goede aan de kinderen</li>
 </ul>
 <br/>
 <h3><strong>Dank voor uw steun!</strong></h3>
@@ -140,6 +140,10 @@ Wist u dat voor de schoolbeloning de kinderen hebben gestemd voor een film kijke
 <p>Ook zijn we bezig met alle oude en kapotte versiering (Sinterklaas, Kerst, Carnaval) te vervangen voor nieuwe artikelen die jaren mee kunnen. <br/>
 Mooie tafelkleden voor kerst en pasen bijvoorbeeld. Geen tafellopers meer van papier, maar van stof. Ook nog eens lekker duurzaam!</p>
 <p>Elke klas heeft nu een eigen bak met kerstversiering. Lampjes, raamversiering enz. enz. De leerlingen kunnen met de leerkracht zo hun eigen klas extra gezellig maken!</p>
+<h4>Wat hebben NIET gedaan, afgelopen jaar?</h4>
+<p>Helaas horen we nog eens wat <i>misverstanden</i>. Zo hoorde ik (Martijn, penningmeester) onlangs bij het ophalen van mijn kinderen: <i>"Daar gaan 'zij' met z'n allen lekker van uit eten".</i> (Refererend aan de ouderbijdrage)<br/>
+Ik kan u verzekeren: alle leden van de oudervereniging zetten zich <strong>belangenloos</strong> in. En van uit-eten op kosten van de kinderen... zal nooit sprake zijn.</p>
+<p>Mocht je vragen of verbeterpunten hebben, spreek een van de leden gewoon aan. Een mailtje sturen kan natuurlijk ook.</p>
 
 
 </aside>
