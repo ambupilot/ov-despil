@@ -96,7 +96,8 @@ Gemiddeld per kind (want ALLE kinderen gaan mee op de schoolreisjes) betekent da
             <h2>Ouderbijdrage betalen</h2>
             {contributionAmount && (
               <p className="mt-1 font-medium text-[var(--text-primary)]">
-                Bijdrage: {contributionAmount}
+                Bijdrage: {contributionAmount}<br/>
+                Kinderen die in 2026 starten betalen € 22,50
               </p>
             )}
           </header>
