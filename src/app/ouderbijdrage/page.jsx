@@ -105,7 +105,7 @@ Gemiddeld per kind (want ALLE kinderen gaan mee op de schoolreisjes) betekent da
          <div>
 
       <a href="https://www.ing.nl/payreq/m/?trxid=rURk8QXxqnRl6E0TMuNpNzSKOM9xebva" target="_blank" rel="noopener noreferrer" class="button-primary  ">Ouderbijdrage vol jaar</a>
-      <br/>
+      <br/><br/>
       <a href="https://www.ing.nl/payreq/m/?trxid=f2aisenB9Q1QeWWo3qojb7cfrhLf9z29" target="_blank" rel="noopener noreferrer" class="button-primary  ">Ouderbijdrage start 2026</a>
           </div>
 
