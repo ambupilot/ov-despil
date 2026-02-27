@@ -39,7 +39,7 @@ export default function Header() {
           <div className="md:basis-2/3 flex flex-col gap-2 md:items-end w-full">
             {/* Rij 1: desktop betaalknop rechts uitgelijnd */}
             <div className="hidden md:flex w-full justify-end">
-              <OuderbijdrageButton size="small" showAmount={false} />
+              
             </div>
 
             {/* Rij 2:
@@ -48,10 +48,7 @@ export default function Header() {
             <div className="flex w-full items-center justify-between md:justify-end gap-3">
               {/* Mobiele betaalknop (links) */}
               <div className="md:hidden">
-                <OuderbijdrageButton
-                  size="small"
-                  showAmount={false}
-                />
+                
               </div>
 
               {/* Desktop menu (rechts onder, rechts uitgelijnd) */}
