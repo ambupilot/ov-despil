@@ -102,35 +102,17 @@ Gemiddeld per kind (want ALLE kinderen gaan mee op de schoolreisjes) betekent da
             )}
           </header>
 
-          <div>
-            <OuderbijdrageButton showAmount />
-  {paymentNote && (
-    <p className="mt-2 text-sm text-[var(--text-subtle)]">
-      {/* {paymentNote} */}
-    </p>
-  )}
+         <div>
+
+      <a href="https://www.ing.nl/payreq/m/?trxid=rURk8QXxqnRl6E0TMuNpNzSKOM9xebva" target="_blank" rel="noopener noreferrer" class="button-primary  ">Ouderbijdrage vol jaar</a>
+      <br/><br/>
+      <a href="https://www.ing.nl/payreq/m/?trxid=f2aisenB9Q1QeWWo3qojb7cfrhLf9z29" target="_blank" rel="noopener noreferrer" class="button-primary  ">Ouderbijdrage start 2026</a>
           </div>
 
-          <div className="mt-4 space-y-2">
-            <p className="text-sm font-medium text-[var(--text-primary)]">
-              Liever scannen? Gebruik de QR-code:
-            </p>
-            <div className="inline-block rounded-2xl border border-[var(--border-subtle)] bg-[var(--surface-muted)] p-3">
-              <Image
-                src={qrImageSrc}
-                alt="QR-code voor betaling van de ouderbijdrage"
-                width={200}
-                height={200}
-                className="block h-auto w-48"
-              />
-            </div>
-            {qrValidUntilText && (
-              <p className="text-xs text-[var(--text-subtle)]">
-                {qrValidUntilText}
-              </p>
-            )}
 
-          </div>
+
+ 
+
         </aside>
         <br/>
 <aside className="card space-y-4">
