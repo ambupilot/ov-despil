@@ -6,24 +6,24 @@
 // 4: https://www.ing.nl/payreq/m/?trxid=p083zppsFkbzKZa9s0rWHQ9fJTfjg85Y
 // 5: https://www.ing.nl/payreq/m/?trxid=ooM4UoaAp80AoWz1xwQj4MgYlrx4dcS1
 //
-// geldog tot: 1 aapril 2026
+// geldig tot: 1 aapril 2026
 
 
 const {
-  SPONSOR_PAYMENT_URL_1,
-  SPONSOR_PAYMENT_URL_2,
-  SPONSOR_PAYMENT_URL_3,
-  SPONSOR_PAYMENT_URL_4,
-  SPONSOR_PAYMENT_URL_5,
+  NEXT_PUBLIC_SPONSOR_PAYMENT_URL_1,
+  NEXT_PUBLIC_SPONSOR_PAYMENT_URL_2,
+  NEXT_PUBLIC_SPONSOR_PAYMENT_URL_3,
+  NEXT_PUBLIC_SPONSOR_PAYMENT_URL_4,
+  NEXT_PUBLIC_SPONSOR_PAYMENT_URL_5,
 } = process.env;
 
 export const sponsoractieConfig = {
   paymentUrls: [
-    SPONSOR_PAYMENT_URL_1,
-    SPONSOR_PAYMENT_URL_2,
-    SPONSOR_PAYMENT_URL_3,
-    SPONSOR_PAYMENT_URL_4,
-    SPONSOR_PAYMENT_URL_5,
+    NEXT_PUBLIC_SPONSOR_PAYMENT_URL_1,
+    NEXT_PUBLIC_SPONSOR_PAYMENT_URL_2,
+    NEXT_PUBLIC_SPONSOR_PAYMENT_URL_3,
+    NEXT_PUBLIC_SPONSOR_PAYMENT_URL_4,
+    NEXT_PUBLIC_SPONSOR_PAYMENT_URL_5,
   ].filter(Boolean),
   buttonLabel: "Doneer voor de sponsoractie",
 };
