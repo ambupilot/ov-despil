@@ -1,4 +1,3 @@
-// src/components/SponsoractieButton.jsx
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
@@ -10,19 +9,14 @@ function pickRandom(arr) {
 
 export default function SponsoractieButton({ className = "" }) {
   const urls = sponsoractieConfig?.paymentUrls || [];
-
-  // fallback: als er (nog) geen links zijn gezet
   const hasUrls = urls.length > 0;
 
   const storageKey = useMemo(() => "ovdespil_sponsoractie_payurl", []);
   const [payUrl, setPayUrl] = useState(null);
 
   useEffect(() => {
-    if (!hasUrls){
-        <p>Geen URL's ingesteld</p>
-    } return;
+    if (!hasUrls) return;
 
-    // Houd dezelfde link gedurende de browser-sessie aan (stabieler bij refresh)
     const existing = sessionStorage.getItem(storageKey);
     if (existing && urls.includes(existing)) {
       setPayUrl(existing);
@@ -34,7 +28,9 @@ export default function SponsoractieButton({ className = "" }) {
     setPayUrl(chosen);
   }, [hasUrls, storageKey, urls]);
 
-  if (!hasUrls) return null;
+  if (!hasUrls) {
+    return <span>geen url ingesteld</span>;
+  }
 
   return (
     <a

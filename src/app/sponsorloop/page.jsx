@@ -74,9 +74,7 @@ Dit jaar is er helaas niet genoeg geld opgehaald met de ouderbijdrage. </p>
           </div>
 
           <div className="mt-4 space-y-2">
-            <p className="text-sm font-medium text-[var(--text-primary)]">
-              Liever scannen? Gebruik de QR-code:
-            </p>
+
             <div className="inline-block rounded-2xl border border-[var(--border-subtle)] bg-[var(--surface-muted)] p-3">
              
             </div>
