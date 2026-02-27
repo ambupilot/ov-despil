@@ -8,6 +8,7 @@ import OuderbijdrageButton from "@/components/OuderbijdrageButton";
 const navItems = [
   { href: "/ouderbijdrage", label: "Ouderbijdrage" },
   { href: "/budget-overzicht", label: "Budget" },
+  { href: "/sponsorloop", label: "Sponsorloop"},
   { href: "/contact", label: "Contact" },
 ];
 
