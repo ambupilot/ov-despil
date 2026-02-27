@@ -27,37 +27,23 @@ export default function SponsoractiePage() {
         <article className="card space-y-4">
           <h1>
           Sponsorloop 2026 – helpt u mee?</h1>
-<p>
-Beste ouders/verzorgers,<br/><br/>
-            
-De oudervereniging organiseert jaarlijks activiteiten die niet door de overheid worden gefinancierd. Denk aan Sinterklaas, Kerst, de Koningsspelen én de schoolreisjes. 
-Dit jaar is er helaas niet genoeg geld opgehaald met de ouderbijdrage. </p>
 
-<h3>H3 titel</h3>
-<p>tekst.</p>
+          <p>
+            <SponsoractieButton />
+          </p>
+<p><br/>
+Onze kinderen rennen zich in het zweet tijdens de sponsorloop!<br/>
+Met jouw bijdrage helpt de Oudervereniging De Spil om extra activiteiten en materialen mogelijk te maken die niet uit het reguliere budget betaald worden. </p>
 
-
-
-  <h3><strong>Waarom uw bijdrage zo belangrijk is:</strong></h3>
- <p> 
-  Zonder de ouderbijdragen kunnen we de schoolreisjes en activiteiten simpelweg niet organiseren. Uw bijdrage komt volledig en direct ten goede aan uw kind en zijn/haar klasgenoten.
-</p>
-<h3>
-❤️&nbsp; Waarom uw bijdrage telt</h3>
+<h3>Hoe werkt het?</h3>
 
 <ul className="ov-list">
-  <li>Maakt de schoolreisjes voor <strong>ALLE</strong> kinderen mogelijk</li>
-  
-  <li>Zorgt voor gelijke kansen</li>
-  
-  <li>Maakt het schooljaar feestelijk én leerzaam</li>
-  
-  <li>Houdt activiteiten betaalbaar en continu</li>
-  
-  <li>Uw bijdrage komt volledig ten goede aan de kinderen</li>
+<li>Je kiest zelf het bedrag (elk bedrag helpt!)</li>
+<li>Je rekent veilig af met iDEAL</li>
+<li>De volledige opbrengst gaat naar activiteiten voor de kinderen</li>
 </ul>
 <br/>
-<h3><strong>Dank voor uw steun!</strong></h3>
+<h3><strong>Namens alle kinderen: Dank voor de steun!</strong></h3>
         </article>
 
 
