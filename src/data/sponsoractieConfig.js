@@ -6,7 +6,7 @@
 // 4: https://www.ing.nl/payreq/m/?trxid=p083zppsFkbzKZa9s0rWHQ9fJTfjg85Y
 // 5: https://www.ing.nl/payreq/m/?trxid=ooM4UoaAp80AoWz1xwQj4MgYlrx4dcS1
 //
-// geldig tot: 1 aapril 2026
+// geldig tot: 1 april 2026
 
 
 export const sponsoractieConfig = {

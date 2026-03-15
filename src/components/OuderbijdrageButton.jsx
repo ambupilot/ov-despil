@@ -1,35 +1,45 @@
-// src/components/OuderbijdrageButton.jsx
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
 import { ouderbijdrageConfig } from "@/data/ouderbijdrageConfig";
 
-export default function OuderbijdrageButton({
-  size = "default",      // "default" | "small"
-  showAmount = false,    // toon "€45,-" naast label
-  className = "",        // extra classes (bv. voor header)
-}) {
-  const {
-    paymentUrl,
-    paymentButtonLabel,
-    contributionAmount,
-  } = ouderbijdrageConfig || {};
+function pickRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
 
-  if (!paymentUrl) {
-    // Niks renderen als de URL niet is ingesteld
-    return null;
-  }
+export default function OuderbijdrageButton({ className = "" }) {
+  const urls = ouderbijdrageConfig?.paymentUrls || [];
+  const hasUrls = urls.length > 0;
 
-  let extraSizeClasses = "";
-  if (size === "small") {
-    extraSizeClasses = "px-3 py-1 text-xs"; // beetje compacter voor in header
+  const storageKey = useMemo(() => "ovdespil_ouderbijdrage_payurl", []);
+  const [payUrl, setPayUrl] = useState(null);
+
+  useEffect(() => {
+    if (!hasUrls) return;
+
+    const existing = sessionStorage.getItem(storageKey);
+    if (existing && urls.includes(existing)) {
+      setPayUrl(existing);
+      return;
+    }
+
+    const chosen = pickRandom(urls);
+    sessionStorage.setItem(storageKey, chosen);
+    setPayUrl(chosen);
+  }, [hasUrls, storageKey, urls]);
+
+  if (!hasUrls) {
+    return <span>geen url ingesteld</span>;
   }
 
   return (
     <a
-      href={paymentUrl}
+      href={payUrl || urls[0]}
+      className={`button-primary ${className}`}
       target="_blank"
-      rel="noopener noreferrer"
-      className={`button-primary ${extraSizeClasses} ${className}`}
+      rel="noreferrer"
     >
-      {paymentButtonLabel || "Betaal de ouderbijdrage"}
+      {ouderbijdrageConfig.buttonLabel || "Betaal"}
     </a>
   );
 }

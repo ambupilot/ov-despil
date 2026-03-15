@@ -1,25 +1,18 @@
 // src/data/ouderbijdrageConfig.js
 
-const {
-  OUDERBIJDRAGE_PAYMENT_URL,
-  OUDERBIJDRAGE_QR_VALID_UNTIL,
-  OUDERBIJDRAGE_AMOUNT,
-  OUDERBIJDRAGE_QR_IMAGE,
-} = process.env;
+// 1: https://www.ing.nl/payreq/m/?trxid=6p1z8a4WRw5hOYAgreBhyBKD2i8YD4He
+// 2: https://www.ing.nl/payreq/m/?trxid=KKHqMSpXDEdqYpTzsGKJPRfq5tjxdydO
+// 3: https://www.ing.nl/payreq/m/?trxid=DnLNcDwRBkvQgNE1j0Ilf11RRrCAgDjo
+// 4: https://www.ing.nl/payreq/m/?trxid=p083zppsFkbzKZa9s0rWHQ9fJTfjg85Y
+// 5: https://www.ing.nl/payreq/m/?trxid=ooM4UoaAp80AoWz1xwQj4MgYlrx4dcS1
+//
+// geldig tot: 1 april 2026
+
 
 export const ouderbijdrageConfig = {
-  paymentUrl:
-    OUDERBIJDRAGE_PAYMENT_URL ||
-    "https://bank.nl/voorbeelddemo-link",
-  paymentButtonLabel: "Betaal de ouderbijdrage",
-  qrImageSrc:
-    OUDERBIJDRAGE_QR_IMAGE ||
-    "/images/qr/ouderbijdrage-qr.png",
-  contributionAmount:
-    OUDERBIJDRAGE_AMOUNT || "€45,- per leerling",
-  qrValidUntilText:
-    OUDERBIJDRAGE_QR_VALID_UNTIL ||
-    "Dit is de lokale unrendered versie",
-  paymentNote:
-    "Local DEV server.",
+  paymentUrls: [
+"https://www.ing.nl/payreq/m/?trxid=Lx5NSPkehkxi4Q6CzLGFUJgANolRD3Gp",
+
+  ],
+  buttonLabel: "Betaal de ouderbijdrage",
 };

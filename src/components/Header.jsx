@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import OuderbijdrageButton from "@/components/OuderbijdrageButton";
 
 const navItems = [
   { href: "/ouderbijdrage", label: "Ouderbijdrage" },

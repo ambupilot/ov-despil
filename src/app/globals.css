@@ -132,6 +132,10 @@ li:last-child {
 
 /* OV De Spil – custom lijststijl */
 
+.small {
+  font-size: 0.8rem;
+}
+
 .ov-list {
   margin: 0.75rem 0;
   padding-left: 0;

@@ -1,5 +1,4 @@
 // src/app/ouderbijdrage/page.jsx
-import Image from "next/image";
 import WebPageSchema from "@/components/WebPageSchema";
 import { ouderbijdrageConfig } from "@/data/ouderbijdrageConfig";
 import OuderbijdrageButton from "@/components/OuderbijdrageButton";
@@ -13,12 +12,6 @@ export const metadata = {
 
 export default function OuderbijdragePage() {
   const {
-    paymentUrl,
-    paymentButtonLabel,
-    qrImageSrc,
-    contributionAmount,
-    qrValidUntilText,
-    paymentNote,
   } = ouderbijdrageConfig;
 
   return (
@@ -36,6 +29,7 @@ export default function OuderbijdragePage() {
           Vrijwillige ouderbijdrage – helpt u mee?</h1>
 <p>
 Beste ouders/verzorgers,<br/><br/>
+
             
 De oudervereniging organiseert jaarlijks activiteiten die niet door de overheid worden gefinancierd. Denk aan Sinterklaas, Kerst, de Koningsspelen én de schoolreisjes. Daarom vragen wij een vrijwillige ouderbijdrage van €45 per kind per jaar.</p>
 
@@ -94,19 +88,19 @@ Gemiddeld per kind (want ALLE kinderen gaan mee op de schoolreisjes) betekent da
         <aside className="card space-y-4">
           <header>
             <h2>Ouderbijdrage betalen</h2>
-            {contributionAmount && (
+          
               <p className="mt-1 font-medium text-[var(--text-primary)]">
-                Bijdrage: {contributionAmount}<br/>
-                Voor kinderen die in 2026 starten: € 22,50
+                Bijdrage: &euro; 45,-<br/>
+                <br />
+                Voor kinderen die <strong>in 2026 starten:</strong> € 22,50<br />
+                <span className="small">U kunt daarvoor het bedrag aanpassen tijdens de betaling.</span>
               </p>
-            )}
+            
           </header>
 
          <div>
+      <OuderbijdrageButton />
 
-      <a href="https://www.ing.nl/payreq/m/?trxid=rURk8QXxqnRl6E0TMuNpNzSKOM9xebva" target="_blank" rel="noopener noreferrer" class="button-primary  ">Ouderbijdrage vol jaar</a>
-      <br/><br/>
-      <a href="https://www.ing.nl/payreq/m/?trxid=f2aisenB9Q1QeWWo3qojb7cfrhLf9z29" target="_blank" rel="noopener noreferrer" class="button-primary  ">Ouderbijdrage start 2026</a>
           </div>
 
 

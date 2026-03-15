@@ -21,8 +21,17 @@ export default function ContactPage() {
         <section className="card space-y-4">
           <h1>Contact met de oudervereniging</h1>
           <p>
-            Heb je vragen, ideeën of wil je meehelpen bij activiteiten? Neem dan
+            Heb je vragen, ideeën of wil je meehelpen bij activiteiten?<br/>Neem dan
             gerust contact met ons op via het formulier hieronder.
+          </p>
+          <p>
+            <strong>Oudervereniging Basisschool De Spil (Voorheen Prins Claus)</strong><br/>
+            Weezenhof 40-02<br/>
+            6536 DB NIJMEGEN
+          </p>
+          <p>
+            KvK: 09122399<br />
+            ING: NL29 INGB 0001 1105 36
           </p>
 
           <div className="mt-4 space-y-1 text-sm text-[var(--ov-text-secondary)]">
@@ -31,7 +40,7 @@ export default function ContactPage() {
             </p>
           </div>
         </section>
-
+<br/>
         <ContactForm />
       </section>
     </>
