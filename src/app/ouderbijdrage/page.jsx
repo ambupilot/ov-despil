@@ -31,8 +31,11 @@ export default function OuderbijdragePage() {
 Beste ouders/verzorgers,<br/><br/>
 
             
-De oudervereniging organiseert jaarlijks activiteiten die niet door de overheid worden gefinancierd. Denk aan Sinterklaas, Kerst, de Koningsspelen én de schoolreisjes. Daarom vragen wij een vrijwillige ouderbijdrage van €45 per kind per jaar.</p>
-
+De oudervereniging organiseert jaarlijks activiteiten die niet door de overheid worden gefinancierd. 
+Denk aan Sinterklaas, Kerst, de Koningsspelen én de schoolreisjes. Daarom vragen wij een vrijwillige ouderbijdrage van €45 per kind per jaar.</p>
+<br/>
+ <OuderbijdrageButton />
+<br /><br/>
 <h3>Hoe besteden wij de ouderbijdrage?</h3>
 <p>We splisten het bedrag op in een bedrag voor de schoolreisjes, en een bedrag voor de activiteiten.</p>
 <p>
@@ -57,7 +60,7 @@ Gemiddeld per kind (want ALLE kinderen gaan mee op de schoolreisjes) betekent da
   <strong>€20 voor activiteiten en feesten</strong><br/>
   Hiermee bekostigen we o.a.: Sinterklaas, Kerst, Carnaval, Kinderboekenweek, Koningsspelen, jaarafsluiting, Avondvierdaagse, attenties voor leerkrachten en leerlingen (zoals een lekker ijsje in de zomer).
 </p>
-
+<p>Op de pagina <a href="/budget-overzicht">budget overzicht</a> kunt u zien welke budgetten we hebben, en hoe we deze besteden.</p>
 
   <h3><strong>Waarom uw bijdrage zo belangrijk is:</strong></h3>
  <p> 
@@ -120,7 +123,7 @@ Mooie tafelkleden voor kerst en pasen bijvoorbeeld. Geen tafellopers meer van pa
 <h4>Wat hebben NIET gedaan, afgelopen jaar?</h4>
 <p>Helaas horen we nog eens wat <i>misverstanden</i>. Zo hoorde ik (Martijn, penningmeester) onlangs bij het ophalen van mijn kinderen: <i>"Daar gaan 'zij' met z'n allen lekker van uit eten".</i> (Refererend aan de ouderbijdrage)<br/>
 Ik kan u verzekeren: alle leden van de oudervereniging zetten zich <strong>belangenloos</strong> in. En van uit-eten op kosten van de kinderen... zal nooit sprake zijn.</p>
-<p>Mocht je vragen of verbeterpunten hebben, spreek een van de leden gewoon aan. Een mailtje sturen kan natuurlijk ook.</p>
+<p>Mocht je vragen of verbeterpunten hebben, spreek dan een van de leden gewoon aan. Een mailtje sturen kan natuurlijk ook.</p>
 
 
 </aside>
