@@ -7,7 +7,8 @@ import Image from "next/image";
 const navItems = [
   { href: "/ouderbijdrage", label: "Ouderbijdrage" },
   { href: "/budget-overzicht", label: "Budget" },
-  { href: "/sponsorloop", label: "Sponsorloop"},
+  //{ href: "/sponsorloop", label: "Sponsorloop"},
+  { href: "/kamp-groep-8", label: "Kamp groep 8" },
   { href: "/contact", label: "Contact" },
 ];
 
