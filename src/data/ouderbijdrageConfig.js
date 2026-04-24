@@ -11,7 +11,7 @@
 
 export const ouderbijdrageConfig = {
   paymentUrls: [
-"https://www.ing.nl/payreq/m/?trxid=Lx5NSPkehkxi4Q6CzLGFUJgANolRD3Gp",
+"https://www.ing.nl/payreq/m/?trxid=LwclbpigDxvL37s6aYNNabpiKHgyLp2N",
 
   ],
   buttonLabel: "Betaal de ouderbijdrage",
