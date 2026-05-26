@@ -7,7 +7,7 @@
 
 export const kampConfig = {
   paymentUrls: [
-"https://www.ing.nl/de-ing/payreq?trxid=aq3mscA3fSzXFECeCFVUZECsQc5eF9TB",
+"https://www.ing.nl/payreq/m/?trxid=TeuNp1RDx1l76RuSDxDkAwmARpCpnvmD",
 
   ],
   buttonLabel: "Betaal de kamp bijdrage",
