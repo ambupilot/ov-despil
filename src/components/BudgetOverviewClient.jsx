@@ -271,7 +271,7 @@ export default function BudgetOverviewClient() {
               <div className="flex justify-between items-start">
                 <h2>{w.groep}</h2>
                 <span
-                  className="text-xs px-2 py-1 rounded-md"
+                  className="budget-post-badge text-xs"
                   style={{
                     backgroundColor:
                       w.type === "uitgaven"
