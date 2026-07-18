@@ -34,7 +34,7 @@ Beste ouders/verzorgers,<br/><br/>
 De oudervereniging organiseert jaarlijks activiteiten die niet door de overheid worden gefinancierd. 
 Denk aan Sinterklaas, Kerst, de Koningsspelen én de schoolreisjes. Daarom vragen wij een vrijwillige ouderbijdrage van €45 per kind per jaar.</p>
 <br/>
-// <OuderbijdrageButton />
+/* <OuderbijdrageButton /> */
 <br /><br/>
 <h3>Hoe besteden wij de ouderbijdrage?</h3>
 <p>We splisten het bedrag op in een bedrag voor de schoolreisjes, en een bedrag voor de activiteiten.</p>
@@ -94,15 +94,15 @@ Gemiddeld per kind (want ALLE kinderen gaan mee op de schoolreisjes) betekent da
           
               <p className="mt-1 font-medium text-[var(--text-primary)]">
                 Bijdrage: &euro; 45,-<br/>
-             //   <br />
-             //   Voor kinderen die <strong>in 2027 starten:</strong> € 22,50<br />
-             //   <span className="small">U kunt daarvoor het bedrag aanpassen tijdens de betaling.</span>
+             /*   <br />
+                Voor kinderen die <strong>in 2027 starten:</strong> € 22,50<br />
+                <span className="small">U kunt daarvoor het bedrag aanpassen tijdens de betaling.</span> */
               </p>
             
           </header>
 
          <div>
-     // <OuderbijdrageButton />
+     /* <OuderbijdrageButton /> */
 
           </div>
 
