@@ -91,9 +91,11 @@ Gemiddeld per kind (want ALLE kinderen gaan mee op de schoolreisjes) betekent da
         <aside className="card space-y-4">
           <header>
             <h2>Ouderbijdrage betalen</h2>
-            
+            <p className="mt-1 font-medium text-[var(--text-primary)]">Betaal veilig en makkelijk via iDEAL. De betaling loopt via een betaalverzoek van de bank.</p>
               <p className="mt-1 font-medium text-[var(--text-primary)]">
                 Bijdrage voor het schooljaar 2026 - 2027: &euro; 45,-<br/>
+                <br />
+                Heb je vragen over de ouderbijdrage? Neem contact op met de Oudervereniging.
                 {/*   <br />
                 Voor kinderen die <strong>in 2027 starten:</strong> € 22,50<br />
                 <span className="small">U kunt daarvoor het bedrag aanpassen tijdens de betaling.</span> */}
