@@ -15,7 +15,7 @@ export default function BudgetOverzichtPage() {
         description={metadata.description}
         type="WebPage"
       />
-
+      <h3>Budget overzicht 2026 - 2027</h3>
       <section className="page-shell space-y-10">
         <BudgetOverviewClient />
       </section>

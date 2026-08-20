@@ -93,7 +93,7 @@ Gemiddeld per kind (want ALLE kinderen gaan mee op de schoolreisjes) betekent da
             <h2>Ouderbijdrage betalen</h2>
             
               <p className="mt-1 font-medium text-[var(--text-primary)]">
-                Bijdrage: &euro; 45,-<br/>
+                Bijdrage voor het schooljaar 2026 - 2027: &euro; 45,-<br/>
                 {/*   <br />
                 Voor kinderen die <strong>in 2027 starten:</strong> € 22,50<br />
                 <span className="small">U kunt daarvoor het bedrag aanpassen tijdens de betaling.</span> */}
