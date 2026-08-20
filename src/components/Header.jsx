@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import OuderbijdrageButton from "./OuderbijdrageButton";
 
 const navItems = [
   { href: "/ouderbijdrage", label: "Ouderbijdrage" },
@@ -39,7 +40,7 @@ export default function Header() {
           <div className="md:basis-2/3 flex flex-col gap-2 md:items-end w-full">
             {/* Rij 1: desktop betaalknop rechts uitgelijnd */}
             <div className="hidden md:flex w-full justify-end">
-              
+              <OuderbijdrageButton />
             </div>
 
             {/* Rij 2:
@@ -48,7 +49,7 @@ export default function Header() {
             <div className="flex w-full items-center justify-between md:justify-end gap-3">
               {/* Mobiele betaalknop (links) */}
               <div className="md:hidden">
-                
+                <OuderbijdrageButton />
               </div>
 
               {/* Desktop menu (rechts onder, rechts uitgelijnd) */}

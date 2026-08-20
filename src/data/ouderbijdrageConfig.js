@@ -11,7 +11,11 @@
 
 export const ouderbijdrageConfig = {
   paymentUrls: [
-"https://www.ing.nl/payreq/m/?trxid=qcTlp99iFNO4g3YycaH0ICky6SE49hWJ",
+"https://www.ing.nl/payreq/m/?trxid=xnwHXb8LE493faMV3c9FNeU0NphUW75r",
+"https://www.ing.nl/payreq/m/?trxid=GYCUGWY6YeNOZZzVhfdy36OyQwJxCAaZ",
+"https://www.ing.nl/payreq/m/?trxid=ykgMwPXyQwhTTdtsTqLzW65NseAFwmGA",
+"https://www.ing.nl/payreq/m/?trxid=It4OiG14kC4l3tvzFcbxci7gy5Oni6fC",
+"https://www.ing.nl/payreq/m/?trxid=Pvw0EABda2waqkjvfqa6qaQgARfVsoiG",
 
   ],
   buttonLabel: "Betaal de ouderbijdrage",
